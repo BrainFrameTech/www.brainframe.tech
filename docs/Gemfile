@@ -9,8 +9,9 @@ gem "jekyll", "~> 4.4"
 
 # Plugins
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.17"   # RSS/Atom feed for the blog
-  gem "jekyll-seo-tag", "~> 2.8" # <meta> tags, Open Graph, Twitter cards
+  gem "jekyll-feed", "~> 0.17"          # RSS/Atom feed for the blog
+  gem "jekyll-seo-tag", "~> 2.8"        # <meta> tags, Open Graph, Twitter cards
+  gem "jekyll-redirect-from", "~> 0.16" # redirect pages (e.g. /test-mobile → form)
 end
 
 # Windows and JRuby do not include zoneinfo files, so bundle the tzinfo-data gem

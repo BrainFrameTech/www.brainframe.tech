@@ -11,7 +11,7 @@ layout: default
     <h1>{{ c.hero.headline }}</h1>
     <p class="subhead">{{ c.hero.subhead }}</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ c.hero.primary_cta.url }}">{{ c.hero.primary_cta.label }}</a>
+      <a class="btn btn-primary" href="{{ c.hero.primary_cta.url | relative_url }}">{{ c.hero.primary_cta.label }}</a>
       <a class="btn btn-ghost" href="{{ c.hero.secondary_cta.url | relative_url }}">{{ c.hero.secondary_cta.label }}</a>
     </div>
   </div>
@@ -54,16 +54,19 @@ layout: default
   </div>
 </section>
 
-<!-- ── Waitlist / CTA ────────────────────────────────────────────────────── -->
-<section id="waitlist">
+<!-- ── Call to action: mobile testing ────────────────────────────────────── -->
+<section id="test">
   <div class="wrap">
     <div class="cta-panel">
-      <h2>{{ c.waitlist.heading }}</h2>
-      <p>{{ c.waitlist.body }}</p>
-      <a class="btn btn-primary"
-         href="mailto:{{ c.waitlist.email }}?subject={{ c.waitlist.email_subject | url_encode }}">
-        {{ c.waitlist.button_label }}
+      <h2>{{ c.test_cta.heading }}</h2>
+      <p>{{ c.test_cta.body }}</p>
+      <a class="btn btn-primary" href="{{ c.test_cta.url | relative_url }}">
+        {{ c.test_cta.button_label }}
       </a>
+      <p class="contact-note">
+        {{ c.test_cta.contact_note }}
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
     </div>
   </div>
 </section>

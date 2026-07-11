@@ -11,7 +11,10 @@ description: >-
   BrainFrame is a local-first personal knowledge management system and universal
   reader — read PDF, EPUB, DOCX, Markdown, archived web pages and more, take
   notes, and keep every note linked to the source it came from.
-email: datacyclist@gmail.com
+email: getbrainframe@gmail.com
+github_url: https://github.com/BrainFrameTech
+mastodon_url: https://c.im/@pedersen
+mastodon_handle: "@pedersen@c.im"
 
 # Production URL. Leave baseurl empty for a root-domain site (brainframe.tech).
 url: "https://brainframe.tech"
@@ -26,6 +29,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Blog posts live in _posts/ and use the "post" layout by default.
 defaults:

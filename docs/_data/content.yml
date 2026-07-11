@@ -20,11 +20,11 @@ hero:
   headline: Your knowledge, connected to its source.
   subhead: >-
     BrainFrame is a local-first reader and note-taking system that keeps every
-    thought linked to the material it came from — PDFs, EPUBs, web pages, and
-    more — across every device you own.
+    thought linked to the material it came from — images and Markdown now, more
+    formats on the way — across every device you own.
   primary_cta:
-    label: Join the waitlist
-    url: "#waitlist"
+    label: Test on iOS & Android
+    url: "/test-mobile"
   secondary_cta:
     label: Read the story
     url: "/blog/"
@@ -33,10 +33,11 @@ hero:
 # Add, remove, or reorder freely. `icon` is a short emoji or symbol.
 features:
   - icon: "📚"
-    title: Read anything
+    title: Read your files
     body: >-
-      PDF, EPUB, DOCX, Markdown, archived web pages, even Linux man pages.
-      One reader for every format you rely on.
+      Images and Markdown work today. PDF, EPUB, DOCX, archived web pages, and
+      even Linux man pages are on the roadmap — one reader, more formats over
+      time.
   - icon: "🔗"
     title: Notes linked to source
     body: >-
@@ -84,17 +85,22 @@ philosophy:
         Obsidian, Notion, Roam, Org-mode and others each capture a piece of this
         vision. BrainFrame is the attempt to implement the whole of it.
 
-# ── Waitlist / call to action ────────────────────────────────────────────────
-waitlist:
-  heading: Be there at the start
+# ── Call to action: mobile testing ───────────────────────────────────────────
+# BrainFrame is open for testing now. This CTA sends people to the iOS/Android
+# tester sign-up (served at /test-mobile, which redirects to the Google Form).
+test_cta:
+  heading: Help put BrainFrame on your phone
   body: >-
-    BrainFrame is in active development. Leave your email and follow along as it
-    takes shape.
-  # For now this opens the visitor's email client. Swap in a form provider
-  # (Buttondown, ConvertKit, Formspree, …) action URL when you're ready.
-  button_label: Email us to follow along
-  email: datacyclist@gmail.com
-  email_subject: "I want to follow BrainFrame"
+    BrainFrame is already open for testing — you don't have to wait. Sign up to
+    try it on iOS and Android, and every tester helps push the app toward public
+    release on the App Store and Google Play.
+  button_label: Sign up to test on iOS & Android
+  url: "/test-mobile"
+  # Reciprocal contact line shown beneath the button. The address itself comes
+  # from `email:` in _config.yml so it only ever lives in one place.
+  contact_note: >-
+    You share your email to test BrainFrame — here's mine, in the same spirit.
+    Questions, ideas, or just want to talk? Write anytime:
 
 # ── Footer ───────────────────────────────────────────────────────────────────
 footer:

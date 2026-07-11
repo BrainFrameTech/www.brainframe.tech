@@ -11,8 +11,10 @@
       <a href="{{ '/' | relative_url }}">Home</a>
       <a href="{{ '/blog/' | relative_url }}">Blog</a>
       <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ site.mastodon_url }}" target="_blank" rel="me noopener">Mastodon</a>
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-      <a href="mailto:{{ site.email }}">Contact</a>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     </div>
   </div>
   <div class="wrap" style="margin-top:28px;color:var(--text-muted);font-size:0.82rem">
