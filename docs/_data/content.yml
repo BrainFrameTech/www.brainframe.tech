@@ -43,19 +43,21 @@ features:
   - icon: "🔗"
     title: Notes linked to source
     body: >-
-      Every note keeps a durable link back to the passage that inspired it, so
-      you always know where an idea actually came from.
+      The idea at the heart of BrainFrame: every note keeps a durable link back to
+      the passage that inspired it, so you always know where it came from. That
+      linking isn't built yet — it's the core of the [roadmap](/roadmap/).
   - icon: "🗂️"
     title: See notes in context
     body: >-
-      View a note on its own, or in the flow of the original source. Follow your
-      thinking back to where it started.
+      Read a note on its own, or in the flow of the source it came from, following
+      your thinking back to where it started. It depends on the linking that's
+      still ahead — planned, not working today.
   - icon: "💻"
     title: Built for every device
     body: >-
-      Desktop builds for Windows, macOS, and Linux today. Native iOS and Android
-      apps and cross-device sync are in active development — see the
-      [roadmap](/roadmap/).
+      Windows and Linux desktop builds run today; a macOS build is provided but
+      untested — treat it as experimental for now. Native iOS and Android apps
+      and cross-device sync are in active development — see the [roadmap](/roadmap/).
   - icon: "🔒"
     title: Your data, yours first
     body: >-
@@ -65,8 +67,9 @@ features:
   - icon: "🧭"
     title: Connect ideas
     body: >-
-      Build a second brain that links sources, notes, and thoughts that were
-      previously scattered across apps and formats.
+      The payoff BrainFrame is building toward: a second brain that links sources,
+      notes, and thoughts once scattered across apps and formats. That connective
+      layer isn't here yet — it's what the linking work unlocks.
 
 # ── Philosophy / "why" section ───────────────────────────────────────────────
 philosophy:
@@ -120,10 +123,12 @@ roadmap:
   today:
     heading: What works today
     body: >-
-      Right now BrainFrame is a desktop app you can run: it reads images and
-      Markdown, lets you take notes, and keeps every note linked to the source it
-      came from. That's a small, honest surface — but it's real and working end
-      to end. Everything below is where it goes from here.
+      Right now BrainFrame is a desktop app you can run, with a working Markdown
+      editor and live preview — you can write notes and read them back. That's the
+      honest extent of it today. The linking that connects a note to its source
+      doesn't work yet — not even internal wikilinks — and since that connection
+      is the whole point of BrainFrame, it's exactly where the work is headed.
+      Everything below is where it goes from here.
 
   # Flagship, in-progress item — gets its own highlighted treatment.
   flagship:
@@ -135,6 +140,19 @@ roadmap:
       no central server in the middle. It's the meatiest, most interesting problem
       in the whole project, and the most rewarding place for a contributor to jump
       in and make a real dent.
+
+  # Elevated priority — its own highlighted card just below the flagship, to
+  # signal that linking is the near-term focus. It's what makes BrainFrame what
+  # it's for, and none of it works yet.
+  priority:
+    tag: Next priority
+    title: Linking notes to their sources
+    body: >-
+      This is the capability that makes BrainFrame what it's for — and today none
+      of it works, not even internal wikilinks. So it's moving to the front of the
+      line: durable links from a note back to the exact passage it came from,
+      backlinks between notes, and reading a note in the flow of its source.
+      Making this real is the near-term focus.
 
   # Planned direction. Bullets, intentionally unordered — these may not happen in
   # this sequence. Add, remove, or reword freely.
@@ -150,10 +168,6 @@ roadmap:
         that — PDF, EPUB, DOCX, archived web pages, even Linux man pages — each one
         brought in and cross-linked the same way, so more of your library lives in
         one place.
-    - title: Deeper note-to-source connections
-      body: >-
-        Grow linking into a real graph: backlinks, viewing a note in the flow of
-        its source, and connecting ideas across documents.
     - title: Optional cloud sync and backup
       body: >-
         For those who want it, an opt-in cloud layer for sync and backup — never
