@@ -132,6 +132,37 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; }
   transform: translateY(-1px);
 }
 
+/* Hamburger toggle — hidden on desktop, shown on mobile (see media query). */
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 38px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+.nav-toggle-bars { position: relative; }
+.nav-toggle-bars::before { position: absolute; left: 0; top: -7px; }
+.nav-toggle-bars::after  { position: absolute; left: 0; top: 7px; }
+/* Open state: middle bar fades, outer bars cross into an X. */
+.nav-toggle.is-open .nav-toggle-bars { background: transparent; }
+.nav-toggle.is-open .nav-toggle-bars::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open .nav-toggle-bars::after  { transform: translateY(-7px) rotate(-45deg); }
+
 /* ── Hero ──────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
@@ -472,7 +503,31 @@ section { padding: 84px 0; }
 
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  /* Links collapse into a full-width dropdown under the header, toggled open. */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 6px 24px 14px;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.7);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 14px 2px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links a:last-child { border-bottom: 0; }
+
   section { padding: 60px 0; }
   .hero-inner { padding: 90px 24px 80px; }
   .flagship-card { padding: 30px 24px; }
