@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">
+        <img src="{{ site.logo | relative_url }}" alt="BrainFrame logo">
+        <strong>Brain<span style="color:var(--accent)">Frame</span></strong>
+      </div>
+      <p style="margin-top:12px">{{ site.data.content.footer.blurb }}</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="mailto:{{ site.email }}">Contact</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:28px;color:var(--text-muted);font-size:0.82rem">
+    © {{ site.time | date: '%Y' }} {{ site.data.content.footer.copyright }}. Built with Jekyll.
+  </div>
+</footer>

@@ -1,0 +1,69 @@
+---
+layout: default
+---
+{% assign c = site.data.content %}
+
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('{{ site.banner | relative_url }}')"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">{{ c.hero.eyebrow }}</span>
+    <h1>{{ c.hero.headline }}</h1>
+    <p class="subhead">{{ c.hero.subhead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ c.hero.primary_cta.url }}">{{ c.hero.primary_cta.label }}</a>
+      <a class="btn btn-ghost" href="{{ c.hero.secondary_cta.url | relative_url }}">{{ c.hero.secondary_cta.label }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ──────────────────────────────────────────────────────────── -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>One home for everything you read and think</h2>
+      <p>Bring your sources and your notes into a single, connected library.</p>
+    </div>
+    <div class="feature-grid">
+      {% for f in c.features %}
+      <div class="feature-card">
+        <div class="icon">{{ f.icon }}</div>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── Philosophy ────────────────────────────────────────────────────────── -->
+<section id="philosophy" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{ c.philosophy.heading }}</h2>
+      <p>{{ c.philosophy.intro }}</p>
+    </div>
+    <div class="philosophy-list">
+      {% for p in c.philosophy.points %}
+      <div class="philosophy-item">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── Waitlist / CTA ────────────────────────────────────────────────────── -->
+<section id="waitlist">
+  <div class="wrap">
+    <div class="cta-panel">
+      <h2>{{ c.waitlist.heading }}</h2>
+      <p>{{ c.waitlist.body }}</p>
+      <a class="btn btn-primary"
+         href="mailto:{{ c.waitlist.email }}?subject={{ c.waitlist.email_subject | url_encode }}">
+        {{ c.waitlist.button_label }}
+      </a>
+    </div>
+  </div>
+</section>

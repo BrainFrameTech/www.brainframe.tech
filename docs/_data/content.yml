@@ -1,0 +1,102 @@
+# ═════════════════════════════════════════════════════════════════════════════
+# BrainFrame landing-page copy
+# ─────────────────────────────────────────────────────────────────────────────
+# This file is the one place to edit the words on the home page. Change the text
+# here and the site rebuilds automatically (with `jekyll serve`). No HTML needed.
+# ═════════════════════════════════════════════════════════════════════════════
+
+# ── Top navigation links ─────────────────────────────────────────────────────
+nav:
+  - label: Features
+    url: "#features"
+  - label: Philosophy
+    url: "#philosophy"
+  - label: Blog
+    url: "/blog/"
+
+# ── Hero (the first thing visitors see) ──────────────────────────────────────
+hero:
+  eyebrow: Personal knowledge management, reimagined
+  headline: Your knowledge, connected to its source.
+  subhead: >-
+    BrainFrame is a local-first reader and note-taking system that keeps every
+    thought linked to the material it came from — PDFs, EPUBs, web pages, and
+    more — across every device you own.
+  primary_cta:
+    label: Join the waitlist
+    url: "#waitlist"
+  secondary_cta:
+    label: Read the story
+    url: "/blog/"
+
+# ── Feature grid ─────────────────────────────────────────────────────────────
+# Add, remove, or reorder freely. `icon` is a short emoji or symbol.
+features:
+  - icon: "📚"
+    title: Read anything
+    body: >-
+      PDF, EPUB, DOCX, Markdown, archived web pages, even Linux man pages.
+      One reader for every format you rely on.
+  - icon: "🔗"
+    title: Notes linked to source
+    body: >-
+      Every note keeps a durable link back to the passage that inspired it, so
+      you always know where an idea actually came from.
+  - icon: "🗂️"
+    title: See notes in context
+    body: >-
+      View a note on its own, or in the flow of the original source. Follow your
+      thinking back to where it started.
+  - icon: "💻"
+    title: Everywhere you work
+    body: >-
+      Windows, macOS, and Linux on the desktop. Android and iOS on the go.
+      Start the app on any device and your library is there.
+  - icon: "🔒"
+    title: Your data, yours first
+    body: >-
+      Everything lives on your devices by default. Notes in plain text, links in
+      open formats you can follow without us. The cloud is an option, never a
+      requirement.
+  - icon: "🧭"
+    title: Connect ideas
+    body: >-
+      Build a second brain that links sources, notes, and thoughts that were
+      previously scattered across apps and formats.
+
+# ── Philosophy / "why" section ───────────────────────────────────────────────
+philosophy:
+  heading: Built on principles, not lock-in
+  intro: >-
+    Today's tools are remarkable, but each is an incomplete take on the same
+    idea. BrainFrame is built around a few commitments we won't compromise.
+  points:
+    - title: Local-first
+      body: >-
+        Your library and notes live on your machine. Work offline, own your
+        files, and never depend on someone else's servers to reach your ideas.
+    - title: Open, neutral formats
+      body: >-
+        Notes are plain text. Source links are stored so you can find your way
+        back to an idea even without BrainFrame installed.
+    - title: One idea, fully realized
+      body: >-
+        Obsidian, Notion, Roam, Org-mode and others each capture a piece of this
+        vision. BrainFrame is the attempt to implement the whole of it.
+
+# ── Waitlist / call to action ────────────────────────────────────────────────
+waitlist:
+  heading: Be there at the start
+  body: >-
+    BrainFrame is in active development. Leave your email and follow along as it
+    takes shape.
+  # For now this opens the visitor's email client. Swap in a form provider
+  # (Buttondown, ConvertKit, Formspree, …) action URL when you're ready.
+  button_label: Email us to follow along
+  email: datacyclist@gmail.com
+  email_subject: "I want to follow BrainFrame"
+
+# ── Footer ───────────────────────────────────────────────────────────────────
+footer:
+  blurb: A local-first reader and knowledge system for people who take their ideas seriously.
+  copyright: BrainFrame
