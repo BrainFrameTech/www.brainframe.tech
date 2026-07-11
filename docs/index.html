@@ -29,7 +29,7 @@ layout: default
       <div class="feature-card">
         <div class="icon">{{ f.icon }}</div>
         <h3>{{ f.title }}</h3>
-        <p>{{ f.body }}</p>
+        {{ f.body | markdownify }}
       </div>
       {% endfor %}
     </div>
