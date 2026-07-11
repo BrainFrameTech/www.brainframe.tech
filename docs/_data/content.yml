@@ -1,0 +1,108 @@
+# ═════════════════════════════════════════════════════════════════════════════
+# BrainFrame landing-page copy
+# ─────────────────────────────────────────────────────────────────────────────
+# This file is the one place to edit the words on the home page. Change the text
+# here and the site rebuilds automatically (with `jekyll serve`). No HTML needed.
+# ═════════════════════════════════════════════════════════════════════════════
+
+# ── Top navigation links ─────────────────────────────────────────────────────
+nav:
+  - label: Features
+    url: "#features"
+  - label: Philosophy
+    url: "#philosophy"
+  - label: Blog
+    url: "/blog/"
+
+# ── Hero (the first thing visitors see) ──────────────────────────────────────
+hero:
+  eyebrow: Personal knowledge management, reimagined
+  headline: Your knowledge, connected to its source.
+  subhead: >-
+    BrainFrame is a local-first reader and note-taking system that keeps every
+    thought linked to the material it came from — images and Markdown now, more
+    formats on the way — across every device you own.
+  primary_cta:
+    label: Test on iOS & Android
+    url: "/test-mobile"
+  secondary_cta:
+    label: Read the story
+    url: "/blog/"
+
+# ── Feature grid ─────────────────────────────────────────────────────────────
+# Add, remove, or reorder freely. `icon` is a short emoji or symbol.
+features:
+  - icon: "📚"
+    title: Read your files
+    body: >-
+      Images and Markdown work today. PDF, EPUB, DOCX, archived web pages, and
+      even Linux man pages are on the roadmap — one reader, more formats over
+      time.
+  - icon: "🔗"
+    title: Notes linked to source
+    body: >-
+      Every note keeps a durable link back to the passage that inspired it, so
+      you always know where an idea actually came from.
+  - icon: "🗂️"
+    title: See notes in context
+    body: >-
+      View a note on its own, or in the flow of the original source. Follow your
+      thinking back to where it started.
+  - icon: "💻"
+    title: Everywhere you work
+    body: >-
+      Windows, macOS, and Linux on the desktop. Android and iOS on the go.
+      Start the app on any device and your library is there.
+  - icon: "🔒"
+    title: Your data, yours first
+    body: >-
+      Everything lives on your devices by default. Notes in plain text, links in
+      open formats you can follow without us. The cloud is an option, never a
+      requirement.
+  - icon: "🧭"
+    title: Connect ideas
+    body: >-
+      Build a second brain that links sources, notes, and thoughts that were
+      previously scattered across apps and formats.
+
+# ── Philosophy / "why" section ───────────────────────────────────────────────
+philosophy:
+  heading: Built on principles, not lock-in
+  intro: >-
+    Today's tools are remarkable, but each is an incomplete take on the same
+    idea. BrainFrame is built around a few commitments we won't compromise.
+  points:
+    - title: Local-first
+      body: >-
+        Your library and notes live on your machine. Work offline, own your
+        files, and never depend on someone else's servers to reach your ideas.
+    - title: Open, neutral formats
+      body: >-
+        Notes are plain text. Source links are stored so you can find your way
+        back to an idea even without BrainFrame installed.
+    - title: One idea, fully realized
+      body: >-
+        Obsidian, Notion, Roam, Org-mode and others each capture a piece of this
+        vision. BrainFrame is the attempt to implement the whole of it.
+
+# ── Call to action: mobile testing ───────────────────────────────────────────
+# BrainFrame is open for testing now. This CTA sends people to the iOS/Android
+# tester sign-up (served at /test-mobile, which redirects to the Google Form).
+test_cta:
+  heading: Help put BrainFrame on your phone
+  body: >-
+    BrainFrame is already open for testing — you don't have to wait. Sign up to
+    try it on iOS and Android, and every tester helps push the app toward public
+    release on the App Store and Google Play.
+  button_label: Sign up to test on iOS & Android
+  url: "/test-mobile"
+  # Reciprocal contact line shown beneath the button. The address itself comes
+  # from `email:` in _config.yml so it only ever lives in one place.
+  contact_note: >-
+    You share your email to test BrainFrame — here's mine, in the same spirit.
+    Questions, ideas, or just want to talk? Write anytime:
+
+# ── Footer ───────────────────────────────────────────────────────────────────
+footer:
+  blurb: A local-first reader and knowledge system for people who take their ideas seriously.
+  copyright: BrainFrame
