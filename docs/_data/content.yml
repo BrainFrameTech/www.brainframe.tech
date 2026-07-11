@@ -11,6 +11,8 @@ nav:
     url: "#features"
   - label: Philosophy
     url: "#philosophy"
+  - label: Roadmap
+    url: "/roadmap/"
   - label: Blog
     url: "/blog/"
 
@@ -49,10 +51,11 @@ features:
       View a note on its own, or in the flow of the original source. Follow your
       thinking back to where it started.
   - icon: "💻"
-    title: Everywhere you work
+    title: Built for every device
     body: >-
-      Windows, macOS, and Linux on the desktop. Android and iOS on the go.
-      Start the app on any device and your library is there.
+      Desktop builds for Windows, macOS, and Linux today. Native iOS and Android
+      apps and cross-device sync are in active development — see the
+      [roadmap](/roadmap/).
   - icon: "🔒"
     title: Your data, yours first
     body: >-
@@ -91,9 +94,9 @@ philosophy:
 test_cta:
   heading: Help put BrainFrame on your phone
   body: >-
-    BrainFrame is already open for testing — you don't have to wait. Sign up to
-    try it on iOS and Android, and every tester helps push the app toward public
-    release on the App Store and Google Play.
+    BrainFrame's mobile apps are almost ready for testing. Sign up to be among
+    the first testers on iOS and Android, and help push toward a public launch
+    on the App Store and Google Play.
   button_label: Sign up to test on iOS & Android
   url: "/test-mobile"
   # Reciprocal contact line shown beneath the button. The address itself comes
@@ -101,6 +104,71 @@ test_cta:
   contact_note: >-
     You share your email to test BrainFrame — here's mine, in the same spirit.
     Questions, ideas, or just want to talk? Write anytime:
+
+# ── Roadmap page (/roadmap/) ─────────────────────────────────────────────────
+# A curated, high-level highlight reel — NOT the full issue tracker. Keep it to a
+# handful of items. `today` is what actually ships right now; everything under
+# `flagship` and `items` is planned direction, in no fixed order. No dates.
+roadmap:
+  eyebrow: Where this is going
+  heading: The direction, not a schedule
+  intro: >-
+    BrainFrame is deliberately ambitious, so here's an honest map: what works
+    today, the work happening right now, and the shape of where it's headed. It's
+    a direction, not a timetable — and not a promise about the order things land.
+
+  today:
+    heading: What works today
+    body: >-
+      Right now BrainFrame is a desktop app you can run: it reads images and
+      Markdown, lets you take notes, and keeps every note linked to the source it
+      came from. That's a small, honest surface — but it's real and working end
+      to end. Everything below is where it goes from here.
+
+  # Flagship, in-progress item — gets its own highlighted treatment.
+  flagship:
+    tag: In active development
+    title: Cross-device sync
+    body: >-
+      This is the work happening right now. We're building CRDT-based sync so your
+      notes and library stay consistent across every device — offline-first, with
+      no central server in the middle. It's the meatiest, most interesting problem
+      in the whole project, and the most rewarding place for a contributor to jump
+      in and make a real dent.
+
+  # Planned direction. Bullets, intentionally unordered — these may not happen in
+  # this sequence. Add, remove, or reword freely.
+  items:
+    - title: Public release on iOS and Android
+      body: >-
+        The mobile apps are in active development. Tester builds come first —
+        [sign up to be among the first to get them](/test-mobile) — and the
+        destination is a full public launch on the App Store and Google Play.
+    - title: Broader format support
+      body: >-
+        Today the reader handles images and Markdown. This is everything after
+        that — PDF, EPUB, DOCX, archived web pages, even Linux man pages — each one
+        brought in and cross-linked the same way, so more of your library lives in
+        one place.
+    - title: Deeper note-to-source connections
+      body: >-
+        Grow linking into a real graph: backlinks, viewing a note in the flow of
+        its source, and connecting ideas across documents.
+    - title: Optional cloud sync and backup
+      body: >-
+        For those who want it, an opt-in cloud layer for sync and backup — never
+        required, always in keeping with local-first.
+    - title: A standalone BrainFrame device
+      body: >-
+        The long-horizon idea: dedicated hardware for reading and note-taking, away
+        from a general-purpose computer.
+
+  cta:
+    body: >-
+      This is the direction, not a schedule. If any of it is the kind of thing
+      you'd want to help build, that's exactly why it's out in the open.
+    button_label: Explore the project on GitHub
+    url: https://github.com/BrainFrameTech
 
 # ── Footer ───────────────────────────────────────────────────────────────────
 footer:

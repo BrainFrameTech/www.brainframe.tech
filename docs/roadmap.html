@@ -1,0 +1,55 @@
+---
+layout: default
+title: Roadmap
+permalink: /roadmap/
+---
+{% assign r = site.data.content.roadmap %}
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<section class="roadmap-head-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">{{ r.eyebrow }}</span>
+      <h2>{{ r.heading }}</h2>
+      <p>{{ r.intro }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Roadmap body ───────────────────────────────────────────────────────── -->
+<section class="section-alt roadmap-body">
+  <div class="wrap">
+
+    <!-- What works today -->
+    <div class="today-panel">
+      <span class="today-tag">Working today</span>
+      <h3>{{ r.today.heading }}</h3>
+      <p>{{ r.today.body }}</p>
+    </div>
+
+    <!-- Flagship: in active development -->
+    <div class="flagship-card">
+      <span class="flagship-tag">{{ r.flagship.tag }}</span>
+      <h3>{{ r.flagship.title }}</h3>
+      <p>{{ r.flagship.body }}</p>
+    </div>
+
+    <!-- The rest — unordered, no numbers -->
+    <p class="roadmap-lead">And the wider direction, in no particular order:</p>
+    <ul class="roadmap-list">
+      {% for item in r.items %}
+      <li>
+        <h3>{{ item.title }}</h3>
+        {{ item.body | markdownify }}
+      </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Contributor CTA -->
+    <div class="roadmap-cta">
+      <p>{{ r.cta.body }}</p>
+      <a class="btn btn-primary" href="{{ r.cta.url }}" target="_blank" rel="noopener">{{ r.cta.button_label }}</a>
+    </div>
+
+  </div>
+</section>
