@@ -172,19 +172,17 @@ to be involved afterwards?
 
 After all of the above, you might be feeling hopeless. I know I did. I know what
 I want, but I didn't have anything to anchor it off of to actually *get* what I
-want. Not until I found out about
-[CRDTs](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type). These
-were first defined in 2011, and have been refined greatly in the many years
-since then. A similar technology, known as "Operational Transformation", is the
-basis for Google Wave and Google Docs collaboration. The technologies themselves
-are old, but for me, they are very new. I've only been learning them over the
-past couple of weeks.
+want. Not until I found out about [Conflict-free Replicated Data
+Types](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type), or
+CRDTs. These were first defined in 2011, and have been refined greatly in the
+many years since then.[^operational-transform] The technology itself is old, but
+for me, it is very new. I've only been learning it over the past couple of
+weeks.
 
-CRDT stands for "Conflict-free Replicated Data Type". This is a long-winded way
-of saying "The computer will always figure out a merge path, and will not
-trouble the user with the need to deal with merges." In the next section, I'll
-go over why this isn't perfect, but for now, for BrainFrame? CRDTs cover over
-90% of all the cases for me very well.
+That mouthful of a name is a long-winded way of saying "The computer will always
+figure out a merge path, and will not trouble the user with the need to deal
+with merges." In the next section, I'll go over why this isn't perfect, but for
+now, for BrainFrame? CRDTs cover over 90% of all the cases for me very well.
 
 Let's build up what we're doing, and how CRDTs handle them, one step at a time.
 As I promised in the beginning, I'm not going to post code here. This is all
@@ -418,6 +416,12 @@ on Mastodon as [@pedersen@c.im](https://c.im/@pedersen). I look forward to it!
 * [Fugue](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
 * [git](https://git-scm.com/)
 * [GitHub](https://github.com/)
+* [Operational
+  Transformation](https://en.wikipedia.org/wiki/Operational_transformation) - An
+  alternative technique that could have been used to replace CRDTs, but was not
+  chosen.
+* [Google Docs](https://en.wikipedia.org/wiki/Google_Docs) - One of the most
+  famous products that *does* use Operational Transformation.
 
 # Footnotes
 
@@ -435,3 +439,12 @@ on Mastodon as [@pedersen@c.im](https://c.im/@pedersen). I look forward to it!
     [CTSS](https://en.wikipedia.org/wiki/Timeline_of_operating_systems#1960s)
     (released in 1961), it's safe to assume the first conflicts were being felt
     by users around the same time.
+
+[^operational-transform]: A similar technology known as "[Operational
+    Transformation](https://en.wikipedia.org/wiki/Operational_transformation)"
+    takes a different approach. First defined in 1989, it was later adopted for
+    use in [Google Docs](https://en.wikipedia.org/wiki/Google_Docs). While there
+    is no actual *requirement* for using a central server to be successful with
+    Operational Transformation, the complexity involved in getting it right
+    (especially when CRDTs are much easier) makes this option a non-starter for
+    BrainFrame.
