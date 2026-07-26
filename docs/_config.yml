@@ -20,6 +20,10 @@ mastodon_handle: "@pedersen@c.im"
 url: "https://brainframe.tech"
 baseurl: ""
 
+# Post URLs are sequenced by date under /blog. Categories/tags are deliberately
+# kept OUT of the URL (the Jekyll default permalink puts categories in the path).
+permalink: /blog/:year/:month/:day/:title/
+
 # Brand assets (paths are relative to the site root).
 logo: /assets/img/brainframe.png
 banner: /assets/img/brainframe-banner.png

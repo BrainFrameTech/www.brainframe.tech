@@ -1,0 +1,35 @@
+---
+layout: default
+title: Topics
+permalink: /topics/
+---
+<div class="page">
+  <h1>Topics</h1>
+  <p class="meta">Browse posts by subject.</p>
+
+  {% assign sorted_tags = site.tags | sort %}
+  {% if sorted_tags.size > 0 %}
+  <ul class="topic-index">
+    {% for tag in sorted_tags %}
+    <li><a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a> <span class="topic-count">({{ tag[1].size }})</span></li>
+    {% endfor %}
+  </ul>
+
+  {% for tag in sorted_tags %}
+  <section class="topic-group">
+    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    <ul class="post-list">
+      {% for post in tag[1] %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncatewords: 34 }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+  {% else %}
+  <p>No tagged posts yet — this page fills in as posts get published with tags.</p>
+  {% endif %}
+</div>
