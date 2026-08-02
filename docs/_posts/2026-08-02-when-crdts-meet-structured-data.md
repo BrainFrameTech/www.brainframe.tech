@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Two Shoppers, One Grocery List, and a Missing Bag of Dog Food"
-date:   2026-08-01 22:00:00 -0400
+date:   2026-08-02 10:00:00 -0400
 tags: crdt sync offline localfirst
 excerpt: >-
     Conflict-free replicated data types aren't infallible. Let's explore the ways they can help, and the ways they can be the wrong tool for the job.
