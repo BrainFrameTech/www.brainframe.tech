@@ -2,7 +2,7 @@
 layout: post
 title:  "What's the Right Answer When Both Edits Are Valid?"
 date:   2026-07-26 12:00:00 -0400
-tags: crdt sync offline conflict-resolution
+tags: crdt sync offline conflictresolution
 excerpt: >-
   One harmless four-word sentence turns out to break every notes app that syncs
   across devices. Here's the problem, and the family of solutions that leads

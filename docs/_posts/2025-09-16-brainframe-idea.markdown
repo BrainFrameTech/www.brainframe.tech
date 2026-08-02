@@ -2,7 +2,7 @@
 layout: post
 title:  "Brainframe Idea - Imagine This"
 date:   2025-09-16 21:20:00 -0400
-tags: local-first pkms sync vision
+tags: localfirst pkms sync vision
 excerpt: BrainFrame is an idea whose time has come. Let's imagine what it could be.
 description: The original vision for what BrainFrame could be.
 ---
