@@ -106,7 +106,7 @@ Over time, these links will expand to include information *about* the tools.
 ## Hardware
 
 * [reMarkable](https://remarkable.com/)
-* [SuperNote](https://supernote.com/)
+* [Supernote](https://supernote.com/)
 
 ## Ebook Sources
 
