@@ -13,6 +13,8 @@ nav:
     url: "#philosophy"
   - label: Roadmap
     url: "/roadmap/"
+  - label: Going Beyond BrainFrame
+    url: "/going-beyond-brainframe/"
   - label: Blog
     url: "/blog/"
 
