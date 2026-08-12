@@ -5,6 +5,7 @@ _site
 vendor
 Gemfile.lock
 *~
+.bundle
 
 # Claude Code session/worktree data
 .claude/

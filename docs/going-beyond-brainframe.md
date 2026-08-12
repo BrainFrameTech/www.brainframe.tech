@@ -64,10 +64,13 @@ Over time, these links will expand to include information *about* the tools.
 
 ### Personal Knowledge Management Systems
 
+* [AFFiNE](https://affine.pro/)
 * [Anytype](https://anytype.io/)
+* [Capacities](https://capacities.io/)
 * [Google Keep](https://keep.google.com/)
 * [Joplin](https://joplinapp.org/)
 * [Logseq](https://logseq.com/)
+* [Microsoft OneNote](https://onenote.cloud.microsoft/en-us/)
 * [Notion](https://notion.com/)
 * [Obsidian](https://obsidian.md/)
 * [Org-mode](https://orgmode.org/)
