@@ -1,0 +1,122 @@
+---
+# Set up this machine to build, serve and debug the Jekyll site in docs/:
+# Ruby with headers and a compiler for the gems' native extensions, then the
+# exact gem versions from docs/Gemfile.lock installed into docs/vendor/bundle.
+#
+# Easiest: `make setup` from the repo root runs this with the right flags.
+#
+# Before running:
+#   - Ubuntu (tested on 26.04), with a user that can sudo.
+#   - Paths are relative to this playbook, so it can be run from any directory.
+#
+# Run:
+#   sudo apt update
+#   sudo apt install -y ansible
+#   ansible-playbook -i localhost, -c local -e ansible_become_exe=sudo.ws -K setup-dev.yml
+#
+# Preview changes without applying them:
+#   ansible-playbook -i localhost, -c local -e ansible_become_exe=sudo.ws -K --check --diff setup-dev.yml
+#
+# What the flags do:
+#   -i localhost,   inventory of just this machine (the comma makes it a host
+#                   list, not a file name)
+#   -c local        run tasks directly, not over ssh
+#   -K              prompt for your sudo password
+#   -e ansible_become_exe=sudo.ws
+#                   Ubuntu 25.10 and later default to sudo-rs, whose password
+#                   prompt Ansible doesn't recognize; sudo.ws is the classic
+#                   sudo. Leave this flag off on Ubuntu 25.04 and earlier,
+#                   which have no sudo.ws.
+#
+# If your ~/.ansible.cfg already sets these, plain
+# `ansible-playbook setup-dev.yml` works too.
+#
+# Afterwards, work on the site with `make debug`, or:
+#   cd docs
+#   bundle exec jekyll serve --livereload --drafts   # → http://localhost:4000
+#
+# Re-run after pulling a new Gemfile.lock; it installs only what's missing.
+#
+# Ruby comes from Ubuntu (3.3 on 26.04). CI builds with the version in
+# docs/.ruby-version, which may be newer; Jekyll behaves the same on both.
+
+- name: Set up Jekyll development environment
+  hosts: localhost
+  connection: local
+  become: true
+
+  vars:
+    site_dir: "{{ playbook_dir }}/docs"
+
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    # ruby-dev and build-essential compile the gems with C extensions
+    # (bigdecimal, json, eventmachine, http_parser.rb); without them
+    # `bundle install` fails with "can't find header files for ruby".
+    - name: Install Ruby and build tools
+      ansible.builtin.apt:
+        name:
+          - ruby
+          - ruby-dev
+          - ruby-bundler
+          - build-essential
+          - zlib1g-dev
+          - libffi-dev
+          - libyaml-dev
+          - git
+        state: present
+
+    # Keep the site's gems inside the project (docs/vendor/bundle, gitignored)
+    # so nothing is installed system-wide and no sudo is needed for bundler.
+    # This is what `bundle config set --local path vendor/bundle` writes.
+    - name: Create docs/.bundle directory
+      become: false
+      ansible.builtin.file:
+        path: "{{ site_dir }}/.bundle"
+        state: directory
+        mode: "0755"
+
+    - name: Install gems into docs/vendor/bundle
+      become: false
+      ansible.builtin.copy:
+        dest: "{{ site_dir }}/.bundle/config"
+        content: |
+          ---
+          BUNDLE_PATH: "vendor/bundle"
+        mode: "0644"
+
+    - name: Check whether the site's gems are installed
+      become: false
+      ansible.builtin.command:
+        cmd: bundle check
+        chdir: "{{ site_dir }}"
+      register: bundle_check
+      changed_when: false
+      failed_when: false
+      check_mode: false
+
+    - name: Install the site's gems
+      become: false
+      ansible.builtin.command:
+        cmd: bundle install
+        chdir: "{{ site_dir }}"
+      when: bundle_check.rc != 0
+      changed_when: true # only runs when `bundle check` found gems missing
+
+    # Proves the toolchain works end to end. Output goes to docs/_site, which
+    # `jekyll serve` overwrites anyway and git ignores.
+    - name: Verify the site builds
+      become: false
+      ansible.builtin.command:
+        cmd: bundle exec jekyll build
+        chdir: "{{ site_dir }}"
+      environment:
+        JEKYLL_ENV: production
+      register: jekyll_build
+      changed_when: false
+      failed_when: jekyll_build.rc != 0 or 'Error' in jekyll_build.stderr
+      when: not ansible_check_mode
