@@ -12,13 +12,25 @@ To upgrade gems, run `bundle update` here and commit the new `Gemfile.lock`.
 
 ## Run it locally
 
+From the repository root, on Ubuntu:
+
 ```bash
-cd docs
-bundle install          # first time only
-bundle exec jekyll serve # → http://localhost:4000
+make setup   # first time only: installs Ruby, build tools and gems (asks for sudo)
+make debug   # → http://localhost:4000, with drafts and live reload
 ```
 
-The site rebuilds automatically as you edit — refresh the browser. The one
+`make setup` runs the Ansible playbook `setup-dev.yml`; its header explains
+the flags it uses if you want to run it by hand. On other systems, install Ruby
+with its development headers and a C compiler, then:
+
+```bash
+cd docs
+bundle config set --local path vendor/bundle
+bundle install
+bundle exec jekyll serve --livereload --drafts
+```
+
+The site rebuilds automatically as you edit, and the browser reloads itself. The one
 exception is `_config.yml`: restart the server after changing it.
 
 ## Where the words live
