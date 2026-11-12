@@ -1,7 +1,14 @@
 # brainframe.tech
 
 The static marketing site for BrainFrame, built with [Jekyll](https://jekyllrb.com/).
-GitHub Pages serves it from this `docs/` folder.
+
+The site source lives in this `docs/` folder. On every push to `main`, the
+GitHub Actions workflow in `.github/workflows/pages.yml` builds it with the
+Jekyll version pinned in `Gemfile.lock` and deploys it to GitHub Pages. Pull
+requests run the same build (without deploying), so a broken site shows up as a
+failed check before merge.
+
+To upgrade gems, run `bundle update` here and commit the new `Gemfile.lock`.
 
 ## Run it locally
 
