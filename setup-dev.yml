@@ -28,8 +28,8 @@
 #                   sudo. Leave this flag off on Ubuntu 25.04 and earlier,
 #                   which have no sudo.ws.
 #
-# If ~/.ansible.cfg already sets these (the dotfiles bootstrap.yml writes one),
-# plain `ansible-playbook setup-dev.yml` works too.
+# If your ~/.ansible.cfg already sets these, plain
+# `ansible-playbook setup-dev.yml` works too.
 #
 # Afterwards, work on the site with `make debug`, or:
 #   cd docs
